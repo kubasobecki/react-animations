@@ -13,7 +13,7 @@ const modal = props => {
     ];
 
     return (
-        <div className="Modal" className={cssClasses.join(' ')}>
+        <div className={cssClasses.join(' ')}>
             <h1>A Modal</h1>
             <button className="Button" onClick={props.closed}>
                 Dismiss

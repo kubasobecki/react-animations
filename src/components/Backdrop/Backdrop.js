@@ -12,7 +12,7 @@ const backdrop = props => {
             : ''
     ];
 
-    return <div className="Backdrop" className={cssClasses.join(' ')}></div>;
+    return <div className={cssClasses.join(' ')}></div>;
 };
 
 export default backdrop;
