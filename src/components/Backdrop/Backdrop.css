@@ -9,11 +9,11 @@
 }
 
 .Backdrop.entering {
-    animation: openModalBackdrop 300ms linear;
+    animation: openModalBackdrop linear;
 }
 
 .Backdrop.exiting {
-    animation: closeModalBackdrop 300ms linear;
+    animation: closeModalBackdrop linear;
 }
 
 @keyframes openModalBackdrop {

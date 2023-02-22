@@ -6,6 +6,8 @@ import Backdrop from './components/Backdrop/Backdrop';
 import List from './components/List/List';
 import { Transition } from 'react-transition-group';
 
+const duration = 300;
+
 class App extends Component {
     state = {
         modalIsOpen: false
@@ -25,14 +27,18 @@ class App extends Component {
                 <h1>React Animations</h1>
                 <Transition
                     in={this.state.modalIsOpen}
-                    timeout={300}
+                    timeout={duration}
                     mountOnEnter
                     unmountOnExit
                 >
                     {state => (
                         <>
-                            <Modal show={state} closed={this.hideModal} />
-                            <Backdrop show={state} />
+                            <Modal
+                                show={state}
+                                closed={this.hideModal}
+                                duration={duration}
+                            />
+                            <Backdrop show={state} duration={duration} />
                         </>
                     )}
                 </Transition>

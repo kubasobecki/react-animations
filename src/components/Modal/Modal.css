@@ -13,11 +13,11 @@
 }
 
 .Modal.entering {
-    animation: openModal 300ms linear;
+    animation: openModal linear;
 }
 
 .Modal.exiting {
-    animation: closeModal 300ms linear;
+    animation: closeModal linear;
 }
 
 @keyframes openModal {
