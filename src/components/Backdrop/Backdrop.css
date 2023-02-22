@@ -8,11 +8,11 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.BackdropOpen {
+.Backdrop.entering {
     animation: openModalBackdrop 300ms linear;
 }
 
-.BackdropClosed {
+.Backdrop.exiting {
     animation: closeModalBackdrop 300ms linear;
 }
 

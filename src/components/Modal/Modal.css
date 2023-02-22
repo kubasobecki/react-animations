@@ -10,14 +10,13 @@
     top: 30%;
     left: 25%;
     width: 50%;
-    transition: all 300ms ease-out;
 }
 
-.ModalOpen {
+.Modal.entering {
     animation: openModal 300ms linear;
 }
 
-.ModalClosed {
+.Modal.exiting {
     animation: closeModal 300ms linear;
 }
 
@@ -41,7 +40,7 @@
         transform: translateY(0);
     }
     50% {
-        opacity: 0.75;
+        opacity: 1;
         transform: translateY(50%);
     }
     100% {
