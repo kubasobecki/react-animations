@@ -1,43 +1,52 @@
 import React, { Component } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import './List.css';
 
 class List extends Component {
     state = {
         items: [1, 2, 3]
-    }
+    };
 
     addItemHandler = () => {
-        this.setState((prevState) => {
+        this.setState(prevState => {
             return {
                 items: prevState.items.concat(prevState.items.length + 1)
             };
         });
-    }
+    };
 
-    removeItemHandler = (selIndex) => {
-        this.setState((prevState) => {
+    removeItemHandler = selIndex => {
+        this.setState(prevState => {
             return {
-                items: prevState.items.filter((item, index) => index !== selIndex)
+                items: prevState.items.filter(
+                    (item, index) => index !== selIndex
+                )
             };
         });
-    }
+    };
 
-    render () {
-        const listItems = this.state.items.map( (item, index) => (
-            <li 
-                key={index}
-                className="ListItem" 
-                onClick={() => this.removeItemHandler(index)}>{item}</li>
-        ) );
+    render() {
+        const listItems = this.state.items.map((item, index) => (
+            <CSSTransition key={index} classNames="fade" timeout={500}>
+                <li
+                    className="ListItem"
+                    onClick={() => this.removeItemHandler(index)}
+                >
+                    {index}
+                </li>
+            </CSSTransition>
+        ));
 
         return (
             <div>
-                <button className="Button" onClick={this.addItemHandler}>Add Item</button>
+                <button className="Button" onClick={this.addItemHandler}>
+                    Add Item
+                </button>
                 <p>Click Item to Remove.</p>
-                <ul className="List">
+                <TransitionGroup component="ul" className="List">
                     {listItems}
-                </ul>
+                </TransitionGroup>
             </div>
         );
     }
